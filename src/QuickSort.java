@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+// Conforme solicitado, o pivô utilizado é o primeiro elemento do array
+
+
 public class QuickSort {
     public static int[] ordenar(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
@@ -8,7 +11,7 @@ public class QuickSort {
 
     private static void quickSort(int[] arr, int baixo, int alto) {
         if (baixo < alto) {
-            // Escolhendo o primeiro elemento como pivô
+            // Escolha do pivô
             int pi = particionar(arr, baixo, alto);
 
             quickSort(arr, baixo, pi - 1);
@@ -34,7 +37,6 @@ public class QuickSort {
             if (direita < esquerda) {
                 feito = true;
             } else {
-                // Trocar arr[esquerda] e arr[direita]
                 int temp = arr[esquerda];
                 arr[esquerda] = arr[direita];
                 arr[direita] = temp;
@@ -42,7 +44,6 @@ public class QuickSort {
             System.out.println(Arrays.toString(arr));
         }
 
-        // Trocar arr[baixo] e arr[direita]
         int temp = arr[baixo];
         arr[baixo] = arr[direita];
         arr[direita] = temp;
